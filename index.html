@@ -2,40 +2,108 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=	, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
 <body>
-		<div class="container">
-			<h1>Artboard</h1>
-			<div class="formBlock row">
-				<div class="formWrap">
-					<input type="text" class="inputDefault" placeholder="Regular" onfocus="focusInput(this)" >
+	<div class="container">
+		<section>
+			<div class="formWrap">	
+				<div class="formField row">
+						<input type="text" id="input1" onfocus="focusInput(this)">
+						<label class="inpLabel" for="input1" >Example Input</label>
+						<div class="div">Обычный input</div>
 				</div>
+			<div class="formField  row">
+				<textarea type="textarea" id="input2" onfocus="focusInput(this)"></textarea>
+				<label class="inpLabel" for="input2" >Example textarea</label>
+				<div>Text Area</div>
+			</div>
+			</div>	
+			<div class="formField row">
+				<div class="checkbox" onclick="checkbox(this)"></div>
+				<div>Checkbox</div>
+			</div>
+			<div class="formField row">
+				<div class="checkbox checked" onclick="checkbox(this)"></div>
+				<div>Checkbox checked</div>
+			</div>
+			<div class="formField row">
+				<div class="checkbox checked dissable" onclick="checkbox(this)"></div>
+				<div>Checkbox dissable</div>
+			</div>
+			<form>
+				<div class="formField row">
+					<div class="loadFile">
+						<input type="file" id="loadFile1">
+						<label for="loadFile1" class="fileLabel">Выберите файл</label>
 
-				<div class="formWrap">
-					<input type="text" class="inputLabel" id="inputLabel" placeholder="" onfocus="focusInput(this)" >
-					<label for="inputLabel" class="label">With Label</label>
+					</div>			
 				</div>
-
-				<div class="formWrap">
-					<input type="text" class="inputLabel" id="inputValidation" placeholder="" onfocus="focusInput(this)" >
-					<label for="inputValidation" class="label">With validation (More 1 symbol)</label>
-					<i class="fas fa-times"></i>
+			</form>
+			<div class="formField row">
+					<div class="toggle" onclick="toggle(this)">
+						<div class="togBounce"></div>
+					</div>		
+					<div>Toggle</div>
+			</div>
+			<div class="formField row">
+					<div class="toggle checked" onclick="toggle(this)">
+						<div class="togBounce"></div>
+					</div>
+					<div>Toggle включенный</div>		
+			</div>
+			<div class="formField row">
+					<div class="toggle dissable" onclick="toggle(this)">
+						<div class="togBounce"></div>
+					</div>
+					<div>Toggle заблокированный</div>			
+			</div>
+			<div class="formField row">
+					<div class="radio" onclick="radio(this)">
+					</div>
+					<div>Radio </div>			
+			</div>
+			<div class="formField row">
+					<div class="radio checked" onclick="radio(this)">
+					</div>
+					<div>Radio включенный</div>			
+			</div>
+			<div class="formField row">
+					<div class="radio dissable" onclick="radio(this)">
+					</div>
+					<div>Radio заблокированный</div>			
+			</div>
+			<div class="card">
+				<div class="navigation">
+					<div class="tab">Profile</div>
+					<div class="tab">Messages</div>
+					<div class="tab">Settings</div>
 				</div>
-				<div class="formWrap formIcons">
-					<span class="spanIcon">	
-						<i class="fas fa-users"></i>
-					</span>	
-					<input type="text" class="inputLabel" id="withFontAwesomeIcons" placeholder="" onfocus="focusInput(this)" >
-					<label for="withFontAwesomeIcons" class="label">With FontAwesome Icons</label>
-
+				<div class="content">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, neque officia! Velit, sed voluptates laudantium, dolores labore, quasi porro, perferendis ipsa necessitatibus totam voluptatibus. Vel recusandae rem libero. Quos, beatae?
 				</div>
 			</div>
-		</div>
-<script src="js/script.js"></script>
+			<div class="card autoCard">
+				<img src="img/car.png" class="imgBlock" alt="">
+<!-- 				<img src="img/car.png" class="imgBlock blur" alt=""> -->
+				<div class="content">
+					<p class="name">Toyota MARK II</p>
+					<p class="year">1996 год</p>
+					<p class="price">256.000 рублей</p>
+					<div class="infoSeller row">
+						<div class="row"><img src="img/marc.jpg" alt=""><p>	Aleksey</p></div>
+						<div class="btn">Контакты</div>	
+					</div>	
+				</div>
+			</div>
+			<!-- <div class="formField">
+				<input type="text" id="input1" placeholder="Example Input">
+				<label class="label" for="input1" >Example Input</label>
+			</div> -->
+		</section>
+	</div>
+	<script src="js/script.js">	</script>
 </body>
 </html>

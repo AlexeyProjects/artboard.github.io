@@ -254,7 +254,26 @@ label.fileLabel:hover {
 	width: 5rem;
 	border-radius: 50%;
 	margin-right: 2rem;
+	transition: 0.3s;
 	box-shadow: 0 5px 15px -8px rgb(0 0 0 / 24%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.card.withImg .imgBlock {
+	width: 100%;
+	overflow: hidden;
+	display: inline-block;
+}
+.card.withImg .imgframe {
+	width: 100%;
+	overflow: hidden;
+	display: inline-block;
+}
+.card.withImg img.imgBlock {
+	overflow: hidden;
+	transition: 3s;
+}
+.card.withImg img.imgBlock:hover {
+	transform: scale(1.03);
 }
 .card .content {
 	font-weight: 700;
@@ -351,6 +370,7 @@ label.fileLabel:hover {
 	box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.4);
 	border-radius: 10px;
 	z-index: 10;
+	overflow: hidden;
 }
 .card.autoCard .infoSeller {
 	margin-top: 5rem;
@@ -374,6 +394,7 @@ label.fileLabel:hover {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .card.serviceCard {
 	text-align: center;
@@ -415,6 +436,7 @@ label.fileLabel:hover {
 	margin-bottom: 2rem;
 	font-size: 5rem;
 	color: #fff;
+	text-align: center;
 }
 .card.serviceCard .list .contItem span {
 	font-size: 2.5rem;
@@ -431,17 +453,45 @@ label.fileLabel:hover {
 	text-align: center;
 }
 .card.serviceCard .btn {
-	background: red;
+	background-color: transparent;
 	font-size: 1.4rem;
 	border: 1px solid red;
 	color: #fff;
 	text-transform: uppercase;
 	width: 	60%;
 	margin: 2.5rem auto 0rem auto;
+	text-align: center;
+	font-weight: 300;
+	transform: 0.2s;
+
+}
+.card.serviceCard .btn:hover {
+	border: 1px solid red;
+	background: red;
+	box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 40%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 .card.withImg {
 	text-align: center;
 }
 .card.withImg .imgBlock {
 	margin: -10% auto 0 auto;
+}
+.summerCard .cardTitle {
+	color: #00bcd4;
+}
+.summerCard .content {
+	opacity: 0.7;
+}
+.twitterCard {
+	background: linear-gradient(60deg,#26c6da,#0097a7);
+}
+.twitterCard .cardTitle {
+	color: rgba(255,255,255,0.7);
+	font-weight: 300;
+}
+.twitterCard .content {
+	color: #fff;
+}
+.card .infoAuthor p {
+	opacity: 0.8;
 }

@@ -3,24 +3,39 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Artboard</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media_index.css">
+	<link rel="stylesheet" href="css/icon.css">
 </head>
 <body>
 	<div class="container">
 		<section>
-			<div class="formWrap">	
-				<div class="formField row">
-						<input type="text" id="input1" onfocus="focusInput(this)">
-						<label class="inpLabel" for="input1" >Example Input</label>
-						<div class="div">Обычный input</div>
+			<div class="formField row">
+				<div class="form">
+					<input type="text" id="input1" onfocus="focusInput(this)">
+					<label class="inpLabel" for="input1" >Example Input</label>
+					<div class="boxForm" >
+						<div></div>
+						<div class="labelFill"></div>
+						<div></div>
+					</div>
 				</div>
-			<div class="formField  row">
-				<textarea type="textarea" id="input2" onfocus="focusInput(this)"></textarea>
-				<label class="inpLabel" for="input2" >Example textarea</label>
+				<div class="div">Обычный input</div>
+
+			</div>
+			<div class="formField row">
+				<div class="form">
+					<textarea type="textarea" id="input2" onfocus="focusInput(this)"></textarea>
+					<label class="inpLabel" for="input2" >Example textarea</label>
+					<div class="boxForm area" >
+						<div></div>
+						<div class="labelFill"></div>
+						<div></div>
+					</div>
+				</div>
 				<div>Text Area</div>
 			</div>
-			</div>	
 			<div class="formField row">
 				<div class="checkbox" onclick="checkbox(this)"></div>
 				<div>Checkbox</div>
@@ -36,9 +51,9 @@
 			<form>
 				<div class="formField row">
 					<div class="loadFile">
-						<input type="file" id="loadFile1">
+						<input type="file" id="loadFile1" onchange="getName()">
 						<label for="loadFile1" class="fileLabel">Выберите файл</label>
-
+						<div class="fileName">Файл не выбран</div>
 					</div>			
 				</div>
 			</form>
@@ -71,20 +86,43 @@
 					<div>Radio включенный</div>			
 			</div>
 			<div class="formField row">
-					<div class="radio dissable" onclick="radio(this)">
+					<div class="radio checked dissable" onclick="radio(this)">
 					</div>
 					<div>Radio заблокированный</div>			
 			</div>
-			<div class="card">
+			<div class="card navCard">
 				<div class="navigation">
-					<div class="tab">Profile</div>
+					<div class="tab active">Profile</div>
 					<div class="tab">Messages</div>
 					<div class="tab">Settings</div>
 				</div>
 				<div class="content">
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, neque officia! Velit, sed voluptates laudantium, dolores labore, quasi porro, perferendis ipsa necessitatibus totam voluptatibus. Vel recusandae rem libero. Quos, beatae?
+					<div class="tab-content active">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, similique iste neque? Beatae, assumenda ex illo minima soluta nihil esse perferendis nisi molestias vero autem voluptatum necessitatibus saepe dignissimos rerum!
+					Commodi accusantium impedit iste corrupti, veniam, ullam, aperiam voluptates temporibus quod, magni ab debitis fugiat! Omnis, consectetur temporibus, eligendi quo quisquam voluptates ea est dolore facilis alias ut, incidunt aliquam.
+					
+						</div>
+					<div class="tab-content">Quaerat id maxime molestias reprehenderit, pariatur maiores. Omnis sed accusamus enim repellendus itaque est non corrupti eligendi minus, impedit unde, molestias consectetur illum distinctio dolores natus, maxime hic sit perferendis?	</div>
+					<div class="tab-content">Lorem ipsum dolor sit amet consectetur Blanditiis nemo impedit quae laudantium qui sapiente asperiores nobis velit harum perferendis nulla distinctio, voluptas obcaecati facere hic tenetur recusandae quas voluptatem iusto corrupti! Omnis, quas quibusdam pariatur. Voluptatem, quisquam.</div>
 				</div>
 			</div>
+
+			<div class="card navCard">
+				<div class="navigation">
+					<div class="tab active">Profile</div>
+					<div class="tab">Messages</div>
+					<div class="tab">Settings</div>
+				</div>
+				<div class="content">
+					<div class="tab-content active">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, similique iste neque? Beatae, assumenda ex illo minima soluta nihil esse perferendis nisi molestias vero autem voluptatum necessitatibus saepe dignissimos rerum!
+					Commodi accusantium impedit iste corrupti, veniam, ullam, aperiam voluptates temporibus quod, magni ab debitis fugiat! Omnis, consectetur temporibus, eligendi quo quisquam voluptates ea est dolore facilis alias ut, incidunt aliquam.
+					
+						</div>
+					<div class="tab-content">Quaerat id maxime molestias reprehenderit, pariatur maiores. Omnis sed accusamus enim repellendus itaque est non corrupti eligendi minus, impedit unde, molestias consectetur illum distinctio dolores natus, maxime hic sit perferendis?	</div>
+					<div class="tab-content">Lorem ipsum dolor sit amet consectetur Blanditiis nemo impedit quae laudantium qui sapiente asperiores nobis velit harum perferendis nulla distinctio, voluptas obcaecati facere hic tenetur recusandae quas voluptatem iusto corrupti! Omnis, quas quibusdam pariatur. Voluptatem, quisquam.</div>
+				</div>
+			</div>
+
+
 			<div class="card autoCard">
 				<img src="img/car.png" class="imgBlock" alt="">
 <!-- 				<img src="img/car.png" class="imgBlock blur" alt=""> -->
@@ -96,6 +134,145 @@
 						<div class="row"><img src="img/marc.jpg" alt=""><p>	Aleksey</p></div>
 						<div class="btn">Контакты</div>	
 					</div>	
+				</div>
+			</div>
+			<div class="cardList">
+				<div class="card serviceCard">	
+					<div class="blurBlack"></div>
+					<div class="cardTitle">	 
+						Basic
+					</div>
+					<div class="content">	
+						<div class="price">	
+							$69
+						</div>
+						<div class="list">	
+							<div class="contItem"> <span>100</span> Projects</div>
+							<div class="contItem"> <span>5</span> Team members</div>
+							<div class="contItem"> <span>55</span> Personal Contacts</div>
+							<div class="contItem"> <span>5.000</span> Message</div>
+						</div>	
+						<div class="btn">get started</div>
+					</div>
+					
+				</div>
+				<div class="card serviceCard">	
+					<div class="blurBlack"></div>
+					<div class="cardTitle">	 
+						Basic
+					</div>
+					<div class="content">	
+						<div class="price">	
+							$69
+						</div>
+						<div class="list">	
+							<div class="contItem"> <span>100</span> Projects</div>
+							<div class="contItem"> <span>5</span> Team members</div>
+							<div class="contItem"> <span>55</span> Personal Contacts</div>
+							<div class="contItem"> <span>5.000</span> Message</div>
+						</div>	
+						<div class="btn">get started</div>
+					</div>
+					
+				</div>
+				<div class="card serviceCard">	
+					<div class="blurBlack"></div>
+					<div class="cardTitle">	 
+						Basic
+					</div>
+					<div class="content">	
+						<div class="price">	
+							$69
+						</div>
+						<div class="list">	
+							<div class="contItem"> <span>100</span> Projects</div>
+							<div class="contItem"> <span>5</span> Team members</div>
+							<div class="contItem"> <span>55</span> Personal Contacts</div>
+							<div class="contItem"> <span>5.000</span> Message</div>
+						</div>	
+						<div class="btn">get started</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="cardList">
+				<div class="card serviceCard">	
+					<div class="blurBlack"></div>
+					<div class="cardTitle">	 
+						Basic
+					</div>
+					<div class="content">	
+						<div class="price">	
+							$69
+						</div>
+						<div class="list">	
+							<div class="contItem"> <span>100</span> Projects</div>
+							<div class="contItem"> <span>5</span> Team members</div>
+							<div class="contItem"> <span>55</span> Personal Contacts</div>
+							<div class="contItem"> <span>5.000</span> Message</div>
+						</div>	
+						<div class="btn">get started</div>
+					</div>
+					
+				</div>
+				<div class="card serviceCard">	
+					<div class="blurBlack"></div>
+					<div class="cardTitle">	 
+						Basic
+					</div>
+					<div class="content">	
+						<div class="price">	
+							$69
+						</div>
+						<div class="list">	
+							<div class="contItem"> <span>100</span> Projects</div>
+							<div class="contItem"> <span>5</span> Team members</div>
+							<div class="contItem"> <span>55</span> Personal Contacts</div>
+							<div class="contItem"> <span>5.000</span> Message</div>
+						</div>	
+						<div class="btn">get started</div>
+					</div>
+					
+				</div>
+				<div class="card serviceCard">	
+					<div class="blurBlack"></div>
+					<div class="cardTitle">	 
+						Basic
+					</div>
+					<div class="content">	
+						<div class="price">	
+							$69
+						</div>
+						<div class="list">	
+							<div class="contItem"> <span>100</span> Projects</div>
+							<div class="contItem"> <span>5</span> Team members</div>
+							<div class="contItem"> <span>55</span> Personal Contacts</div>
+							<div class="contItem"> <span>5.000</span> Message</div>
+						</div>	
+						<div class="btn">get started</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="cardList">
+				<div class="card">
+					<div class="content">
+						<div class="cardTitle row"><div class="tradingup icon"></div>TRENDING</div>
+						To Grow Your Business Start Focusing on Your Employees
+						<div class="infoAuthor row">
+							<div class="row"><img src="img/marc.jpg" alt=""><p>	Aleksey</p></div>
+						</div>
+					</div>						
+				</div>
+				<div class="card withImg">
+					<img src="img/magazine.jpg" class="imgBlock" alt="">
+					<div class="content">
+						<div class="cardTitle row"><div class="tradingup icon"></div>TRENDING</div>
+						To Grow Your Business Start Focusing on Your Employees
+						<div class="infoAuthor row">
+							<div class="row"><img src="img/marc.jpg" alt=""><p>	Aleksey</p></div>
+						</div>
+					</div>						
 				</div>
 			</div>
 			<!-- <div class="formField">

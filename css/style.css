@@ -5,15 +5,22 @@ html {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	-webkit-font-smoothing: antialised;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 body {
 	font-size: 1.4rem;
-	font-family: 'Roboto', sans-serif;
-	background-color: rgba(0,0,0,0.05)
+	font-family: 'Open Sans', sans-serif;
+	background-color: rgba(0,0,0,0.05);
+	font-weight: 500;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;700&display=swap');
 .container {
-	padding: 2rem;
+	width: 1280px;
+	margin: 0 auto;
+	padding: 2rem 0;
 }
 .row {
 	display: flex;
@@ -22,52 +29,90 @@ body {
 section > div,form {
 	margin-bottom: 3rem;
 }
+
 input,textarea {
-	border: 1.95px solid rgba(0,0,0, 0.1);
+	border: 0;
 	outline: none;
 	transition: 0.3s;
 	padding: 0.5rem 1rem;
 	border-radius: 5px;
 	z-index: 9;
-	width: 30rem;
+	width: 100%;
 	margin-right: 1rem;
 	font-size: 1.4rem;
+	resize: vertical;
+	width: 20rem;
 }
-input:focus,textarea:focus {
-	border: 2.1px solid #1266f1 ;
-}
-input:focus ~ label {
-	color: #1266f1;
-}
-textarea:focus ~ label {
-	color: #1266f1;
+.formField {
+	width: 32rem;
 }
 .formWrap {
-	background-color: #fff;
 	padding: 2rem;
 }
 .formWrap > div {
 	margin-bottom: 3rem;
 }
-.formField {
+.form {
 	position: relative;
+
 }
-.formField label.inpLabel {
+.form input {
+	height: 3rem;
+}
+.form .boxForm.area{
+	height: 98%;
+}
+.boxForm {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+.boxForm > div {
+	height: 100%;
+	border: 2px solid rgba(0,0,0, 0.1);
+	transition: 0.2s;
+	box-sizing: border-box;
+    background: transparent;
+}
+.boxForm > div:first-child {
+	border-right: 0;
+	border-radius: 5px 0px 0px 5px;
+}
+.boxForm > div:nth-child(2n) {
+	border-right: 0;
+	border-left: 0;
+
+}
+.boxForm >div:last-child {
+	border-left: 0;
+	border-radius: 0px 5px 5px 0px;
+}
+.form label.inpLabel {
 	position: absolute;
 	left: 1rem;
 	top: 0.6rem;
-	transition: 0.4s;
-	background-color: #fff;
+	transition: 0.2s;
 	z-index: 11;
 	padding: 1px;
 
 }
-.formField label:hover{
+.form label:hover{
 	cursor: text;
 }
-.formField.fillInput label.inpLabel {
-	top: -0.9rem;
-	font-size: 1.1rem;
+.form.fillInput label.inpLabel {
+	top: -1.15rem;
+	color: #1266ff;
+}
+.form.fillInput .boxForm > div {
+	transition: 0.2s;
+	border-color: #1266ff;
+}
+.form.fillInput .labelFill {
+	border-top: none;
 }
 .checkbox {
 	width: 2rem;
@@ -76,7 +121,7 @@ textarea:focus ~ label {
 	margin-right: 1rem;
 }
 .checkbox.checked {
-	background-image: url(../img/checkbox.png);
+	background-image: url(../img/checkbox.jpg);
 	background-size: contain;
 	border: 0;
 }
@@ -94,24 +139,43 @@ input[type="file"] {
 	width: 24rem;
 }
 .loadFile {
-	display: inline-flex;
-	align-items: center;
-	padding: 0.4rem 0;
-	box-shadow: 0 0 1px 1px rgba(0,0,0, 0.2);
-	overflow: hidden;
-	border-radius: 5px;
+	display: flex;
+	align-items: stretch;
+	/*border: 1.95px solid rgba(0,0,0, 0.2);*/
 }
 .fileLabel {
-	position: absolute;
 	display: flex;
 	left: 0rem;
-	background-color: #1266f1;
-	padding: 0.7rem 0.8rem;
+	background-color: #fff;
+	padding: 1rem 0.8rem;
+	height: 100%;
 	/*border: 1.95px solid rgba(0,0,0, 0.2);*/
 	z-index: 199;
-	color: #fff !important;
+	color: #1266ff;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+	border: 1.95px solid rgba(0,0,0, 0.2);
+	transition: 0.3s;
+}
+label.fileLabel:hover {
+	background-color: #1266f1;
+	color: #fff;
+	cursor: pointer;
+}
+.fileName {
+	padding: 1rem 1rem;
+	/*min-width: 15rem;*/
+	background-color: #fff;
+	border: 1.95px solid rgba(0,0,0, 0.2);
+	border-left: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.formField input[type="file"] {
+	width: 0.1px;
+	height: 0.1px;
+	position: absolute;
+	z-index: -1;
 }
 .toggle {
 	width: 3rem;
@@ -179,7 +243,39 @@ input[type="file"] {
 	margin-top: 10rem;
 	width: 50rem;
 	max-width: 100%;
-	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4);
+	box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+	position: relative;
+	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+	border-radius: 5px;
+	margin-bottom: 15rem;
+	background-color: #fff;
+}
+.card .infoAuthor img {
+	width: 5rem;
+	border-radius: 50%;
+	margin-right: 2rem;
+	box-shadow: 0 5px 15px -8px rgb(0 0 0 / 24%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+.card .content {
+	font-weight: 700;
+	font-size: 2rem;
+	color: #3c4858;
+	text-align: left;
+}
+.card .infoAuthor {
+	font-size: 1.8rem;
+	font-weight: 400;
+	margin-top: 3rem;
+}
+.card .cardTitle {
+	margin-bottom: 1.5rem;
+	color: #f44336;
+}
+.card.autoCard, .card.serviceCard, .card.navCard {
+	margin-top: 10rem;
+	width: 50rem;
+	max-width: 100%;
+	box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 40%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 	position: relative;
 	padding: 6rem 1.5rem 1.5rem 1.5rem;
 	border-radius: 5px;
@@ -188,18 +284,24 @@ input[type="file"] {
 
 }
 .card .navigation {
-	position: absolute;
 	background-color: #1266f1;
-	transform: translateX(-50%);
+	/*transform: translateX(-50%);*/
 	top: -2rem;
 	left: 50%;
 	width: 90%;
 	margin: 0 auto;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	border-radius: 5px;
 	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4);
 	padding: 1rem;
+	margin-top: -8rem;
+	overflow: auto;
+
+}
+.card.navCard .content {
+	font-weight: 300;
+	font-size: 1.6rem;
 }
 .card .navigation .tab {
 	margin-right: 1.5rem;
@@ -208,12 +310,23 @@ input[type="file"] {
 	transition: 0.3s;
 	border-radius: 5px;
 }
+.content {
+	padding: 2rem 2rem;
+}
+.tab-content {
+	display: none;
+}
+.tab-content.active {
+	display: block;
+}
 .card .navigation .tab:hover {
 	background-color: rgba(255,255,255, 0.1);
 	cursor: pointer;
 }
+.card .navigation .tab.active {
+	background-color: rgba(255,255,255, 0.1);
+}
 .card.autoCard {
-
 	font-size: 2rem;
 	text-align: center;
 }
@@ -222,6 +335,7 @@ input[type="file"] {
 	background-color: #fff;
 	text-align: left;
 	color: rgba(0,0,0,0.4);
+	font-weight: 300;
 }
 .card.autoCard .content p.name {
 	color: #000;
@@ -234,13 +348,14 @@ input[type="file"] {
 	margin: -10rem auto 0 auto;
 	top: 50%;
 	left: 50%;
-	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.4);
 	border-radius: 10px;
 	z-index: 10;
 }
 .card.autoCard .infoSeller {
 	margin-top: 5rem;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .card.autoCard .infoSeller img {
 	width: 5rem;
@@ -249,3 +364,84 @@ input[type="file"] {
 	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.4);
 }
 
+.nav-block {
+	width: 90%;
+	padding-top: 2rem;
+	background-color: red;
+	margin-top: -5rem;
+}
+.cardList {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.card.serviceCard {
+	text-align: center;
+	background-image: url(../img/blocg.jpg);
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+	color: #fff;
+	width: 30rem;
+	min-height: 40rem;
+	border-radius: 10px;
+	padding: 3.5rem 0.5rem 1.5rem 0.5rem;
+	text-align: center;
+}
+.card.serviceCard .content, .card.serviceCard .cardTitle{
+	z-index: 2;
+	position: relative;
+	font-size: 2.5rem;
+}
+.blurBlack {
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+   	border-radius: 10px;
+}
+.card.serviceCard .cardTitle {
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	color: #fff;
+}
+.card.serviceCard .content .price {
+	margin-bottom: 2rem;
+	font-size: 5rem;
+	color: #fff;
+}
+.card.serviceCard .list .contItem span {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+.card.serviceCard .list .contItem {
+	margin-bottom: 1rem;
+	border-bottom: 0.1px solid rgba(255,255,255,0.3);
+	font-weight: 300;
+	padding-bottom: 1rem;
+	font-size: 2rem;
+	font-weight: 300;
+	color: #fff;
+	text-align: center;
+}
+.card.serviceCard .btn {
+	background: red;
+	font-size: 1.4rem;
+	border: 1px solid red;
+	color: #fff;
+	text-transform: uppercase;
+	width: 	60%;
+	margin: 2.5rem auto 0rem auto;
+}
+.card.withImg {
+	text-align: center;
+}
+.card.withImg .imgBlock {
+	margin: -10% auto 0 auto;
+}

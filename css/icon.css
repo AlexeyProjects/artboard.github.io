@@ -1,0 +1,10 @@
+.icon {
+	width: 2rem;
+	height: 2rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-right: 1rem;
+}
+.tradingup.icon {
+	background-image: url(../img/tradeup.png);
+}

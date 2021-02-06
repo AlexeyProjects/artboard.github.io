@@ -37,7 +37,7 @@ function focusInput(el) {
 
 // Тоглл чек-бокса
 function checkbox(el) {
-	if (el.classList.contains('dissable')) {
+	if (el.classList.contains('disable')) {
 		return
 	}
 	else if (el.classList.contains('checked')) {
@@ -49,7 +49,7 @@ function checkbox(el) {
 }
 
 function checkbox(el) {
-	if (el.classList.contains('dissable')) {
+	if (el.classList.contains('disable')) {
 		return
 	}
 	else if (el.classList.contains('checked')) {
@@ -61,7 +61,7 @@ function checkbox(el) {
 }
 
 function toggle(el) {
-	if (el.classList.contains('dissable')) {
+	if (el.classList.contains('disable')) {
 		return
 	}
 	else if (el.classList.contains('checked')) {
@@ -72,7 +72,7 @@ function toggle(el) {
 	}
 }
 function radio(el) {
-	if (el.classList.contains('dissable')) {
+	if (el.classList.contains('disable')) {
 		return
 	}
 	else if (el.classList.contains('checked')) {

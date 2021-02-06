@@ -125,7 +125,7 @@ input,textarea {
 	background-size: contain;
 	border: 0;
 }
-.checkbox.dissable {
+.checkbox.disable {
 	opacity: 0.5;
 }
 .checkbox:hover {
@@ -203,7 +203,7 @@ label.fileLabel:hover {
 .toggle.checked {
 	background-color: #1266f1;
 }
-.toggle.dissable {
+.toggle.disable {
 	opacity: 0.5;
 }
 .toggle.checked .togBounce {
@@ -222,7 +222,7 @@ label.fileLabel:hover {
 .radio.checked {
 	background-image: url(../img/radiochecked.png);
 }
-.radio.dissable {
+.radio.disable {
 	opacity: 0.5;
 }
 .btn {

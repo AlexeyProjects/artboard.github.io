@@ -1,4 +1,8 @@
 @media screen and (max-width: 1280px) {
+	.container {
+		width: auto;
+		padding: 1.5rem;
+	}
 	.cardList {
 		flex-direction: column;
 	}
